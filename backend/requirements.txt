@@ -1,0 +1,9 @@
+fastapi[all]
+langchain>=0.1.0
+langchain-openai>=0.1.1
+pandas
+pydantic
+python-dotenv
+requests
+sqlalchemy
+tqdm
