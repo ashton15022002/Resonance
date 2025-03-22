@@ -23,10 +23,11 @@ app = FastAPI(title='Resonance',
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:5173"],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"])
+    allow_headers=["*"]
+)
 
 app.include_router(user.router)
 
@@ -74,3 +75,8 @@ def create_recommendation(data: dict):
 def send_receipt(data: dict):
     send_email(data['recipients'], data['attachment'])
     return f"Sent email to {', '.join(data['recipients'])}"
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

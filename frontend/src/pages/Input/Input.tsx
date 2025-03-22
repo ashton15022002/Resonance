@@ -34,7 +34,7 @@ const Input = () => {
 	const [notes, setNotes] = useState("");
 	const [genre, setGenre] = useState<FilterKey>();
 	const [selectOption, setSelectedOption] = useState("");
-	const [apiKey, setApiKey] = useState("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");
+	const [apiKey, setApiKey] = useState("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");
 
 	const handleFilterChange = (filter: FilterKey) => {
 		setSliderValues(Features[filter]);

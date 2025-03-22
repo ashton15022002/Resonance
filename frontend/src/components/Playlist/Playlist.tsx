@@ -8,12 +8,14 @@ interface PlaylistProps {
 const Playlist = ({ playlist, color }: PlaylistProps) => {
 	return (
 		<div className="playlist__container">
-			<iframe
-				src={`https://open.spotify.com/embed/playlist/${playlist.id}?utm_source=generator`}
-				frameBorder="0"
-				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-				loading="lazy"
-			></iframe>
+			{playlist && (
+				<iframe
+					src={`https://open.spotify.com/embed/playlist/${playlist.id}?utm_source=generator`}
+					frameBorder="0"
+					allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+					loading="lazy"
+				></iframe>
+			)}
 			<div className="playlist__description">
 				<div className="playlist__description-head">
 					<h5>PUBLIC PLAYLIST</h5>

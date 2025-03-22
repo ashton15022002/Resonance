@@ -11,7 +11,7 @@ class LLM():
     def __init__(self, key) -> None:
         self.llm = ChatOpenAI(
             openai_api_key=key, model="gpt-4o")
-        self.parser= self.__get_parser
+        self.parser = self.__get_parser()
 
     def __get_parser(self):
         schema = [
@@ -67,7 +67,7 @@ class LLM():
             # Print the response for debugging
             print(f"Raw response: {result.content}")
             
-            return self.__get_parser().parse(result.content)
+            return self.parser.parse(result.content)
         except Exception as e:
             print(f"Error in analyze method: {str(e)}")
             # Return a basic valid response so the UI doesn't get stuck
